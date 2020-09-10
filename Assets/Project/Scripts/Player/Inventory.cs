@@ -47,4 +47,13 @@ public class Inventory : MonoBehaviour
         else
             mItemObject.GetComponent<PickableItem>().SetAsNotPickable();
     }
+
+    public void HideCurrentItem()
+    {
+        mCurrentItem = ItemsIds.Items.NONE;
+        mItemObject.transform.SetParent(m_ItemsRoot.transform);
+        mItemObject.transform.position = Vector3.zero;
+        mItemObject.GetComponent<PickableItem>().SetAsNotPickable();
+        mItemObject.SetActive(false);
+    }
 }

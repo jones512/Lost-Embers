@@ -33,7 +33,7 @@ namespace AdventureKit.Kernel
                     if (m_ItemId.Equals(playerInventory.GetCurrentItem()))
                     {
                         mDoorOpened = true;
-                        playerInventory.DropCurrentItem(false);
+                        playerInventory.HideCurrentItem();
                         m_Door.transform.DOLocalMoveY(m_Door.transform.localPosition.y + 3f, 1);
                     }
                    
