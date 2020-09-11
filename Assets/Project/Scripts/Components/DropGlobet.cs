@@ -27,6 +27,8 @@ namespace AdventureKit.Kernel
                     {
                         m_Fire.SetActive(true);
                         playerInventory.HideCurrentItem();
+                        K.SoundManager.PlayFXSound(K.SoundManager.GetSFXByName("bornfire"));
+                        LevelController.Instance.RegisterGlobet(m_ItemId.ToString());
                     }
                 }
             }

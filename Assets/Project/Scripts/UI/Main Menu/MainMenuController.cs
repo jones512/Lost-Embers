@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using AdventureKit.Config;
+using AdventureKit.Utils;
 
-namespace AdventureKit.Utils
+namespace AdventureKit.UI
 {
-    public class MainMenuController : MonoBehaviour
+    public class MainMenuController : AdventureKit.Utils.MonoBehaviour
     {
         [SerializeField]
         private Button m_NewGameButton;

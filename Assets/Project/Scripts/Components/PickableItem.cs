@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using AdventureKit.Utils;
 
 
-public class PickableItem : MonoBehaviour
+public class PickableItem : AdventureKit.Utils.MonoBehaviour
 {
     [Header("Item Type")]
     [SerializeField]
@@ -21,6 +22,7 @@ public class PickableItem : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player") && mCanPickUp)
         {
+            K.SoundManager.PlayFXSound(K.SoundManager.GetSFXByName("pick_item"));
             other.GetComponent<Inventory>().PickItem(m_ItemId, this.gameObject);
             SetAsNotPickable();
         }

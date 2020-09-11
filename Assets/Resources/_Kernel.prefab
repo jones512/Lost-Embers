@@ -3558,15 +3558,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GameSounds:
-  - {fileID: 8300000, guid: c3be42e83d08c754ca614141bbabdac8, type: 3}
+  - {fileID: 8300000, guid: 2187bc0ed8925b0428210a8dde553764, type: 3}
   m_SFX:
-  - {fileID: 8300000, guid: 718c63aa9b8a7c54ca525f29bc6d94d0, type: 3}
-  - {fileID: 8300000, guid: e94801334eee98a49a3f16f5675f5165, type: 3}
-  - {fileID: 8300000, guid: ab00435bf052fc84bb516cb97318f292, type: 3}
-  - {fileID: 8300000, guid: b12786d8d32ee1349b143cd61e78a08e, type: 3}
-  - {fileID: 8300000, guid: f537a0df2e6f8e147813c8dcd73ffeae, type: 3}
-  - {fileID: 8300000, guid: 524fb3698f9864ea4a953e57aefc11ad, type: 3}
-  - {fileID: 8300000, guid: adcbbbae313cb40978e30faf82938987, type: 3}
+  - {fileID: 8300000, guid: 4b33fbe924706974a812e07327b68b40, type: 3}
+  - {fileID: 8300000, guid: 628835bbef8907d4999842405c58bb39, type: 3}
+  - {fileID: 8300000, guid: f79651ff862a22446b1e90b3c782bf7a, type: 3}
+  - {fileID: 8300000, guid: 9d22e21522023f249b81b373e111583a, type: 3}
+  - {fileID: 8300000, guid: 594aee231407e53439820153c85122a5, type: 3}
+  - {fileID: 8300000, guid: 2f07c3b7706a64f489133201c2342886, type: 3}
+  - {fileID: 8300000, guid: aa348f776c7354f36917fef10c6b48d1, type: 3}
+  - {fileID: 8300000, guid: cc38b51f3704642d7ba01a8c899baad9, type: 3}
   m_MusicVolume: 1
   m_SFXVolume: 0.5
   m_FadeDuration: 1
@@ -8508,7 +8509,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114406909822262388}
   m_HandleRect: {fileID: 224332911627314470}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -9449,7 +9450,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 468, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &114692135430057628
 MonoBehaviour:

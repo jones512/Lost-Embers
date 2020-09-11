@@ -28,13 +28,16 @@ namespace AdventureKit.Kernel
             if (other.gameObject.tag.Equals("Player"))
             {
                 Inventory playerInventory = other.GetComponent<Inventory>();
-                if(!mDoorOpened)
+                PlayerController player = other.GetComponent<PlayerController>();
+                if (!mDoorOpened)
                 {
                     if (m_ItemId.Equals(playerInventory.GetCurrentItem()))
                     {
-                        mDoorOpened = true;
+                        
+                        player.DisableInput();
                         playerInventory.HideCurrentItem();
-                        m_Door.transform.DOLocalMoveY(m_Door.transform.localPosition.y + 3f, 1);
+                        K.SoundManager.PlayFXSound(K.SoundManager.GetSFXByName("open_door"));
+                        m_Door.transform.DOLocalMoveY(m_Door.transform.localPosition.y + 1.5f, 3).OnComplete(() => { player.EnableInput(); mDoorOpened = true; });
                     }
                    
                 }
@@ -58,6 +61,22 @@ namespace AdventureKit.Kernel
             yield return new WaitForSecondsRealtime(1);
             K.DefaultLoadingScreen.Show(false);
         }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.tag.Equals("Player"))
+            {
+                Inventory playerInventory = other.GetComponent<Inventory>();
+                PlayerController player = other.GetComponent<PlayerController>();
+                if (mDoorOpened)
+                {
+                    StartCoroutine(_EnterInsideCastle());
+
+                }
+            }
+        }
     }
+
+   
 
 }

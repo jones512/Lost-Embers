@@ -28,13 +28,16 @@ namespace AdventureKit.Kernel
             if (other.gameObject.tag.Equals("Player"))
             {
                 Inventory playerInventory = other.GetComponent<Inventory>();
+                PlayerController player = other.GetComponent<PlayerController>();
                 if (!mDoorOpened)
                 {
                     if (m_ItemId.Equals(playerInventory.GetCurrentItem()))
                     {
+                        player.DisableInput();
                         mDoorOpened = true;
-                        playerInventory.DropCurrentItem(false);
-                        m_Door.transform.DOLocalMoveY(m_Door.transform.localPosition.y + 3f, 1);
+                        playerInventory.HideCurrentItem();
+                        K.SoundManager.PlayFXSound(K.SoundManager.GetSFXByName("open_door"));
+                        m_Door.transform.DOLocalMoveY(m_Door.transform.localPosition.y + 2.8f, 3).OnComplete(() => player.EnableInput());
                     }
 
                 }
