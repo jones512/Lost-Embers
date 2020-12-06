@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     CharacterController characterController;
+    Inventory mInventory;
 
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool mEnableInput = true;
     void Start()
     {
+        mInventory = GetComponent<Inventory>();
         characterController = GetComponent<CharacterController>();
     }
 
@@ -33,6 +35,9 @@ public class PlayerController : MonoBehaviour
         {
             if (characterController.isGrounded)
             {
+                if(Input.GetKeyDown("space") && mInventory.GetCurrentItem() != ItemsIds.Items.NONE)
+                    mInventory.DropCurrentItem(true);
+
                 // We are grounded, so recalculate
                 // move direction directly from axes
 

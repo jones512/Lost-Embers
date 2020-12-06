@@ -8,7 +8,10 @@ using AdventureKit.UI;
 
 public class LevelController : AdventureKit.Utils.SingletonMonoBehaviour<LevelController>
 {
-    [SerializeField]private int m_GlobetsToCompleteLevel = 3;
+    [SerializeField] private GameObject m_LevelRoot;
+    [SerializeField] private GameObject m_Light;
+
+    [SerializeField] private int m_GlobetsToCompleteLevel = 3;
     [SerializeField] private PlayerController m_PlayerController;
     [SerializeField] private DebugHandler m_DebugHandler;
     [SerializeField] private LevelUIController m_UIController;
@@ -99,5 +102,19 @@ public class LevelController : AdventureKit.Utils.SingletonMonoBehaviour<LevelCo
     private void Retry()
     {
         K.EnterLevelContext(m_SceneLevel);
+    }
+
+    public void ShowLevel()
+    {
+        m_LevelRoot.SetActive(true);
+        m_PlayerController.EnableInput();
+        m_Light.SetActive(true);
+    }
+
+    public void HideLevel()
+    {
+        m_LevelRoot.SetActive(false);
+        m_PlayerController.DisableInput();
+        m_Light.SetActive(false);
     }
 }

@@ -31,7 +31,8 @@ public class Inventory : MonoBehaviour
     public void DropItem(GameObject item)
     {
         mCurrentItem = ItemsIds.Items.NONE;
-        item.transform.position = this.transform.position;
+        Vector3 postion = new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z);
+        item.transform.position = postion;//this.transform.position;
         item.transform.SetParent(m_ItemsRoot.transform);
         item.GetComponent<PickableItem>().SetAsPickable();
     }
@@ -39,7 +40,8 @@ public class Inventory : MonoBehaviour
     public void DropCurrentItem(bool setAsPickable = true)
     {
         mCurrentItem = ItemsIds.Items.NONE;
-        mItemObject.transform.position = this.transform.position;
+        Vector3 postion = new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z);
+        mItemObject.transform.position = postion;//this.transform.position;
         mItemObject.transform.SetParent(m_ItemsRoot.transform);
 
         if(setAsPickable)

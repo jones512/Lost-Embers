@@ -35,6 +35,9 @@ namespace AdventureKit.Kernel
         [SerializeField]
         LevelContext m_LevelContext;
         public LevelContext LevelContext { get { return m_LevelContext; } }
+        [SerializeField]
+        LoreContext m_LoreContext;
+        public LoreContext LoreContext { get { return m_LoreContext; } }
 
         [Header("Loading Screens")]
         [SerializeField]
@@ -122,6 +125,11 @@ namespace AdventureKit.Kernel
         {
             LevelContext.SetLevelName(levelName);
             EnterOnContext(LevelContext);
+        }
+
+        public void EnterLoreContext()
+        {
+            EnterOnContext(LoreContext);
         }
 
 

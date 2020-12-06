@@ -7,6 +7,7 @@
         KEY_B,
         KEY_C,
         KEY_D,
+        KEY_SPECIAL,
         SWORD,
         GLOBET_A,
         GLOBET_B,

@@ -22,6 +22,7 @@
         public const string WORLD_SELECTION_SCENE = "WorldSelectionScene";
         public const string WORLD_HUD_SCENE = "WorldHudScene";
         public const string FIRST_LEVEL_SCENE = "Level_1";
+        public const string LORE_LEVEL_SCENE = "_LoreScene";
 
 
         const string KEY_IS_MUSIC_ENABLED = "IsMusicEnabled";
